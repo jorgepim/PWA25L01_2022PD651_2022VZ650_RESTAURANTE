@@ -66,7 +66,7 @@ namespace L01_2022PD651_2022VZ650.Controllers
                                           select c).FirstOrDefault();
                 if (clienteUpdate != null)
                 {
-                    clienteUpdate.direccion = cliente.nombreCliente;
+                    clienteUpdate.nombreCliente = cliente.nombreCliente;
                     clienteUpdate.direccion = cliente.direccion;
                     _context.SaveChanges();
                     return Ok();

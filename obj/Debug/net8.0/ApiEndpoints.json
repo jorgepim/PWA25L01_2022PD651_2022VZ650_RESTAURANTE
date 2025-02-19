@@ -191,12 +191,81 @@
   },
   {
     "ContainingType": "L01_2022PD651_2022VZ650.Controllers.platosController",
+    "Method": "CrearPlato",
+    "RelativePath": "api/platos/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "plato",
+        "Type": "L01_2022PD651_2022VZ650.Models.platos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_2022PD651_2022VZ650.Controllers.platosController",
+    "Method": "DeletePlato",
+    "RelativePath": "api/platos/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_2022PD651_2022VZ650.Controllers.platosController",
     "Method": "Get",
     "RelativePath": "api/platos/GetAll",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_2022PD651_2022VZ650.Controllers.platosController",
+    "Method": "GetByName",
+    "RelativePath": "api/platos/GetByName/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "L01_2022PD651_2022VZ650.Controllers.platosController",
+    "Method": "UpdatePlato",
+    "RelativePath": "api/platos/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "plato",
+        "Type": "L01_2022PD651_2022VZ650.Models.platos",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
