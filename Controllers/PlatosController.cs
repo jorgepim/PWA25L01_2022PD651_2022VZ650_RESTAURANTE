@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using L01_2022PD651_2022VZ650;
 using L01_2022PD651_2022VZ650.Models;
 
 namespace L01_2022PD651_2022VZ650.Controllers
@@ -10,17 +8,17 @@ namespace L01_2022PD651_2022VZ650.Controllers
 
     public class platosController : ControllerBase
     {
-        private readonly platosContext _platosContext;
-        public platosController(platosContext platosContexto)
+        private readonly restauranteContext _context;
+        public platosController(restauranteContext platosContexto)
         {
-            _platosContext = platosContexto;
+            _context = platosContexto;
         }
 
         [HttpGet]
         [Route("GetAll")]
         public IActionResult Get()
         {
-            List<platos> listadoPlatos = (from b in _platosContext.platos
+            List<platos> listadoPlatos = (from b in _context.platos
                                             select b).ToList();
 
             if (listadoPlatos.Count == 0)

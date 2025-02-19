@@ -3,7 +3,7 @@ using L01_2022PD651_2022VZ650.Models;
 
 namespace L01_2022PD651_2022VZ650.Controllers
 {
-    [Route("Pedido/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PedidosController : Controller
     {
@@ -74,6 +74,27 @@ namespace L01_2022PD651_2022VZ650.Controllers
             }
             return Ok(pedidos);
         }
+
+        [HttpGet]
+        [Route("GetTopClientes/{n}")]
+        public IActionResult GetTopClientes(int n)
+        {
+            var pedidos = (from p in _context.Pedidos
+                           join c in _context.Clientes on p.clienteId equals c.clienteId
+                           group p by new { p.clienteId, c.nombreCliente } into g
+                           select new
+                           {
+                               clienteId = g.Key.clienteId,
+                               nombreCliente = g.Key.nombreCliente,
+                               total = g.Sum(p => p.precio)
+                           }).OrderByDescending(p => p.total).Take(n);
+            if (pedidos == null)
+            {
+                return NotFound();
+            }
+            return Ok(pedidos);
+        }
+
 
         [HttpPost]
         [Route("Add")]

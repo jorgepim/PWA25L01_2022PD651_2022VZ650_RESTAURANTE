@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "tVn5HdMtnt4AVgJTPEGKNBEMkUtdzdX4olo+eOYujdg=",
+  "Hash": "IMOAGw6EWPOUWTRae6+c8fOMJRk0N33MSO+1xa2d0dA=",
   "Source": "L01_2022PD651_2022VZ650",
   "BasePath": "_content/L01_2022PD651_2022VZ650",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace L01_2022PD651_2022VZ650.Controllers
 {
-    [Route("Cliente/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ClientesController : Controller
     {
@@ -30,8 +30,8 @@ namespace L01_2022PD651_2022VZ650.Controllers
         public IActionResult GetByAdress(string direccion)
         {
             List<Clientes> clientes = (from c in _context.Clientes
-                            where c.direccion.Contains(direccion)
-                            select c).ToList();
+                                       where c.direccion.Contains(direccion)
+                                       select c).ToList();
             if (clientes.Count == 0)
             {
                 return NotFound();
@@ -83,6 +83,32 @@ namespace L01_2022PD651_2022VZ650.Controllers
         [Route("Delete/{id}")]
         public IActionResult DeleteCliente(int id)
         {
+            //try
+            //{
+            //    Clientes cliente = (from c in _context.Clientes
+            //                        where c.clienteId == id
+            //                        select c).FirstOrDefault();
+            //    if (cliente != null)
+            //    {
+            //        List<Pedidos> pedidos = (from p in _context.Pedidos
+            //                                 where p.pedidoId == id
+            //                                 select p).ToList();
+            //        if (pedidos != null)
+            //        {
+            //            return Conflict("Este cliente tiene pedidos asociados. ¿Está seguro de que desea eliminarlos?");
+            //            _context.Pedidos.RemoveRange(pedidos);
+            //        }
+            //        _context.Clientes.Remove(cliente);
+            //        _context.SaveChanges();
+            //        return Ok();
+            //    }
+            //    return NotFound();
+            //}
+            //catch (Exception ex)
+            //{
+            //    return BadRequest(ex.Message);
+            //}
+
             try
             {
                 Clientes cliente = (from c in _context.Clientes
