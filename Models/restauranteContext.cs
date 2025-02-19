@@ -7,5 +7,8 @@ namespace L01_2022PD651_2022VZ650.Models
         public restauranteContext(DbContextOptions<restauranteContext> options) : base(options)
         {
         }
+        public DbSet<platos> platos { get; set; }
+
     }
+
 }
